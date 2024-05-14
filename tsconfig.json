@@ -1,3 +1,38 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "target": "ESNext",
+      "lib": [
+          "ES2017"
+      ],
+      "jsx": "react-native",
+      "moduleResolution": "node",
+      "noEmit": true,
+      "skipLibCheck": true,
+      "resolveJsonModule": true,
+      "experimentalDecorators": true,
+      "esModuleInterop": true,
+      "baseUrl": "./src",
+      "paths": {
+          "~/*": [
+              "./*"
+          ],
+          "tests": [
+              "test/*"
+          ],
+          "@components/*": [
+              "./components/*"
+          ],
+          "@screens/*": [
+              "./screens/*"
+          ],
+      }
+  },
+  "exclude": [
+      "node_modules",
+      "babel.config.js",
+      "metro.config.js",
+      "jest.config.js"
+  ]
 }
